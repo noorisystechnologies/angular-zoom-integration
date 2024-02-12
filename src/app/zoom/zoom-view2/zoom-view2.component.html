@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center align-items-center">
+   <div class="card p-5 col-md-6">
+         <form [formGroup]="startMeetingForm" (ngSubmit)="onSubmit()">
+         <div class="mb-3">
+            <label for="meetingNumber" class="form-label">Meeting Number:</label>
+            <input type="text" id="meetingNumber" class="form-control" formControlName="meetingNumber">
+            <div *ngIf="startMeetingForm.get('meetingNumber').invalid && startMeetingForm.get('meetingNumber').touched"
+               class="text-danger">
+               Meeting Number is required.
+            </div>
+         </div>
+         <div class="mb-3">
+            <label for="userName" class="form-label">User Name:</label>
+            <input type="text" id="userName" class="form-control" formControlName="userName">
+            <div *ngIf="startMeetingForm.get('userName').invalid && startMeetingForm.get('userName').touched"
+               class="text-danger">
+               User Name is required.
+            </div>
+         </div>
+   
+         <div class="mb-3">
+            <label for="passWord" class="form-label">Password:</label>
+            <input type="password" id="passWord" class="form-control" formControlName="passWord">
+            <div *ngIf="startMeetingForm.get('passWord').invalid && startMeetingForm.get('passWord').touched"
+               class="text-danger">
+               Password is required.
+            </div>
+         </div>
+   
+         <div class="mb-3">
+            <label for="userEmail" class="form-label">User Email:</label>
+            <input type="email" id="userEmail" class="form-control" formControlName="userEmail">
+            <div *ngIf="startMeetingForm.get('userEmail').invalid && startMeetingForm.get('userEmail').touched"
+               class="text-danger">
+               User Email is required.
+            </div>
+         </div>
+            <button type="submit" class="btn btn-primary btn-block w-100 mx-auto" [disabled]="startMeetingForm.invalid">Start Meeting</button>
+      </form>
+   </div>
+</div>
